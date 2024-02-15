@@ -2,8 +2,8 @@ package com.jobhub.service.customer;
 import java.util.List;
 
 import com.jobhub.dto.customer.Customer;
-import com.jobhub.dto.customer.Scrap;
 import com.jobhub.dto.customer.CustomerSearchCondition;
+import com.jobhub.dto.customer.Scrap;
 import com.jobhub.dto.jobposting.Notice;
 import com.jobhub.dto.resume.Resume;
 public interface CustomerService {
@@ -47,5 +47,10 @@ public interface CustomerService {
 	public List<Resume> findSubmissionResumeByPostingId(String postingId);
 	
 	public List<Resume> findNotSubmissionResume(String userId);
+	
+	public List<Customer> findCustomerList();
+	
+	public List<Customer> findCustomerListBySearchCondition(CustomerSearchCondition customerSearchCondition);
+	
 
 }

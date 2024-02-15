@@ -61,11 +61,34 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 	<resources mapping="/js/common/*" location="/resources/common/js/" />
 	<resources mapping="/fileStorage/**" location="file:///D:/fileStorage/" />
 
-
 	<resources mapping="/**" location="/resources/" />
 	
-	
 
-
+	<interceptors>
+		<interceptor>
+			<mapping path="/admin/**" />
+			<exclude-mapping path="/resources/**" />
+			<exclude-mapping path="/admin/joinApproval" />
+			<exclude-mapping path="/admin/login" />
+			<exclude-mapping path="/admin/css/**" />
+			<exclude-mapping path="/admin/images/**" />
+			<exclude-mapping path="/admin/img/**" />
+			<exclude-mapping path="/admin/asset/**" />
+			<exclude-mapping path="/admin/js/**" />
+			<exclude-mapping path="/common/css/**" />
+			<exclude-mapping path="/common/icon/**" />
+			<exclude-mapping path="/common/img/**" />
+			<exclude-mapping path="/common/js/**" />
+			<exclude-mapping path="/css/**" />
+			<exclude-mapping path="/js/**" />
+			<exclude-mapping path="/image/**" />
+			<exclude-mapping path="/img/**" />
+			<exclude-mapping path="/fileStorage/**" />
+			<exclude-mapping path="/" />
+			<exclude-mapping path="/main" />
+			<exclude-mapping path="/login" />
+			<beans:bean id="adminInterceptor" class="com.jobhub.interceptor.LoginInterceptor" />
+		</interceptor>
+	</interceptors>	
 
 </beans:beans>
