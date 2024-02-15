@@ -13,5 +13,9 @@ public class EmployeeSearchCondition {
 	String address;
 	String hireDate;
 	String email;
+	
+	//관리자 가입요청
+	String birthDay;
+    String sexCode;
 
 }

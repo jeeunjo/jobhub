@@ -117,4 +117,32 @@ public class AdminServiceImpl implements AdminService {
 		return employeeList;
 	}
 
+	@Override
+	public boolean isMatchingEmployeeInfo(EmployeeSearchCondition employeeSearchCondition) {
+		// Controller 가 넘겨준 name, birhDay, sexCode하고 
+		// DB 에 일치하는 name, birth, gender 있는지 확인
+		List<Employee> employeeList = adminDAO.findEmployeeListBySearchCondition(employeeSearchCondition);
+		if (!employeeList.isEmpty()) {
+			return true; // return 1;
+		} else {
+			return false; // return 0;
+		}
+	}
+
+	@Override
+	public int saveJoinRequest(Employee employee) {
+		int result = adminDAO.saveJoinRequest(employee);
+		return result;
+	}
+
+	@Override
+	public boolean isExistingAdmin(Employee employee) {
+		Admin admin = adminDAO.findAdminByEmployee(employee);
+		if (admin == null) {
+			return false; // return 0;
+		} else {
+			return true; // return 1;
+		}
+	}
+
 }

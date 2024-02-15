@@ -13,6 +13,8 @@ public interface AdminDAO {
 	
 	public Admin findLoginAdmin(Admin admin);
 	
+	public Admin findAdminByEmployee(Employee employee);
+	
 	public int saveAdmin(Admin admin);
 	
 	public int saveAdminProfile(AdminProfile adminProfile);
@@ -35,4 +37,5 @@ public interface AdminDAO {
 	
 	public List<Employee> findEmployeeListBySearchCondition(EmployeeSearchCondition employeeSearchCondition);
 	
+	public int saveJoinRequest(Employee employee);
 }

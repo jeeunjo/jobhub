@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 /* reset */
 html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
 	code, form, fieldset, legend, input, textarea, p, blockquote, th, td,
@@ -29,19 +29,6 @@ body, code {
 html:lang(ko) body, html:lang(ko) code {
 	font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움',
 		'Arial', 'verdana', sans-serif;
-}
-
-html:lang(ja) body, html:lang(ja) code {
-	font-family: Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-		sans-serif;
-}
-
-html:lang(vi) body, html:lang(vi) code {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-html:lang(en) body, html:lang(en) code {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 ul, ol, dl, li {
@@ -81,19 +68,6 @@ input, select, textarea {
 html:lang(ko) input, html:lang(ko) select, html:lang(ko) textarea {
 	font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움',
 		'Arial', 'verdana', sans-serif;
-}
-
-html:lang(ja) input, html:lang(ja) select, html:lang(ja) textarea {
-	font-family: Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-		sans-serif;
-}
-
-html:lang(vi) input, html:lang(vi) select, html:lang(vi) textarea {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-html:lang(en) input, html:lang(en) select, html:lang(en) textarea {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 input[type="checkbox"], label {
@@ -137,19 +111,6 @@ button {
 html:lang(ko) button {
 	font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움',
 		'Arial', 'verdana', sans-serif;
-}
-
-html:lang(ja) button {
-	font-family: Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-		sans-serif;
-}
-
-html:lang(vi) button {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-html:lang(en) button {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 button::-moz-focus-inner {
@@ -241,337 +202,6 @@ object, del, sub, var {
 article, aside, details, figcaption, figure, footer, header, hgroup,
 	menu, nav, section {
 	display: block;
-}
-
-/* 미대응브라우저 */
-#unsupported {
-	overflow: hidden;
-	height: 100%;
-}
-
-#unsupported:lang(ko) {
-	font-family: 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움', 'Arial', 'verdana',
-		sans-serif;
-	font-weight: 300;
-}
-
-#unsupported:lang(ja) {
-	font-family: Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
-		sans-serif;
-}
-
-#unsupported:lang(vi) {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#unsupported:lang(en) {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#unsupported #wrap {
-	-webkit-filter: blur(1.5px);
-	-moz-filter: blur(1.5px);
-	-ms-filter: blur(1.5px);
-	filter: blur(1.5px);
-	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
-}
-
-#unsupported .unsupported {
-	display: block;
-}
-
-.unsupported {
-	display: none;
-}
-
-.unsupported .info {
-	z-index: 110;
-	position: fixed;
-	top: 15%;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	padding: 60px 48px;
-	width: 820px;
-	color: #4c4c4f;
-	text-align: center;
-	border: 2px solid #000;
-	background: #fff;
-	box-sizing: border-box;
-}
-
-.unsupported .info:lang(ko) {
-	height: 615px;
-}
-
-.unsupported .info:lang(ja) {
-	height: 616px;
-}
-
-.unsupported h1 {
-	margin: 0 0 30px;
-	color: #27273a;
-}
-
-.unsupported h1:lang(ko) {
-	font-size: 50px;
-	font-weight: normal;
-}
-
-.unsupported h1:lang(ja) {
-	font-size: 40px;
-	font-weight: bold;
-}
-
-.unsupported .desc {
-	margin: 0 0 40px;
-	line-height: 24px;
-}
-
-.unsupported .desc:lang(ko) {
-	font-size: 16px;
-}
-
-.unsupported .desc:lang(ja) {
-	font-size: 14px;
-	font-weight: 300;
-}
-
-.unsupported .desc strong {
-	color: #000;
-}
-
-.unsupported .browser {
-	overflow: hidden;
-}
-
-.unsupported .browser li {
-	float: left;
-	margin: 0 0 0 27px;
-}
-
-.unsupported .browser li:first-child {
-	margin: 0;
-}
-
-.unsupported .browser li>img {
-	border: 1px solid #d5d5d5;
-	border-bottom-width: 0;
-}
-
-.unsupported .browser li .btnLink {
-	display: block;
-	position: relative;
-	font-size: 17px;
-	color: #fff;
-	background: #43485b;
-}
-
-.unsupported .browser li .btnLink:lang(ko) {
-	padding: 15px 12px 15px 0;
-}
-
-.unsupported .browser li .btnLink:lang(ja) {
-	padding: 15px 25px 15px 0;
-	font-weight: 700;
-}
-
-.unsupported .browser .btnLink:after {
-	content: "";
-	position: absolute;
-	width: 8px;
-	height: 8px;
-	margin: -9px 0 0 -6px;
-	border-left: 1px solid #fff;
-	border-bottom: 1px solid #fff;
-	-webkit-transform: rotate(-135deg);
-	transform: rotate(-135deg);
-}
-
-.unsupported .browser .btnLink:lang(ko):after {
-	top: 61%;
-	right: 70px;
-}
-
-.unsupported .browser .btnLink:lang(ja):after {
-	top: 58%;
-	right: 50px;
-}
-
-.unsupported .browser li .btnLink:hover {
-	text-decoration: none;
-}
-
-.unsupported .footer {
-	padding: 20px 0 0;
-	text-align: right;
-}
-
-.unsupported .close {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-}
-
-.unsupported .close {
-	overflow: hidden;
-	display: block;
-	width: 25px;
-	height: 24px;
-	white-space: nowrap;
-	font-size: 0;
-	text-indent: -150%;
-	background:
-		url("//img.jobhub.com/images/common/browser/sfix_footer.png")
-		no-repeat 0 0;
-}
-
-.unsupported .today {
-	font-size: 12px;
-}
-
-.unsupported .today:lang(ko) {
-	font-family: "돋움", Dotum, sans-serif;
-}
-
-.unsupported .today .check {
-	width: 17px;
-	height: 17px;
-	margin: 0 0 0 9px;
-	border-radius: 0;
-	cursor: pointer;
-	background:
-		url('//img.jobhub.com/images/common/browser/sfix_footer.png')
-		no-repeat 0 -50px;
-}
-
-.unsupported .today .check:checked {
-	background-position: -50px -50px;
-}
-
-.unsupported .dimmed {
-	z-index: 100;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-}
-
-
-/* 상단 띠배너 */
-.banner.active {
-	display: block;
-}
-
-.banner {
-	display: none;
-	position: relative;
-	width: 100%;
-	height: 90px;
-	padding: 18px 0;
-	box-sizing: border-box;
-	color: #fff;
-	letter-spacing: -0.0075em;
-	text-align: center;
-	background-image:
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/bg_top_banner.png');
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.banner .info .title {
-	font-size: 20px;
-	line-height: 30px;
-	vertical-align: middle;
-}
-
-.banner .info .desc {
-	font-size: 16px;
-	line-height: 24px;
-	color: #F4F5F8;
-	font-weight: 300;
-}
-
-.banner .info .txtStressLink span {
-	position: relative;
-	display: inline-block;
-	color: #00FFFC;
-}
-
-.banner .info .txtStressLink span:after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: 1px;
-	width: 100%;
-	height: 1px;
-	background-color: #00FFFC;
-}
-
-.banner .info .txtStressLink em.icoOutLink {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	background:
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_target.png')
-		no-repeat 0 0;
-}
-
-.banner .btnClose {
-	display: inline-block;
-	position: absolute;
-	top: 33px;
-	right: 30px;
-	width: 24px;
-	height: 24px;
-	min-height: 24px;
-	padding: 0;
-	font-size: 0;
-	line-height: 0;
-	overflow: hidden;
-	white-space: nowrap;
-	text-indent: 150%;
-	background: transparent;
-}
-
-.banner .btnClose:before, .banner .btnClose:after {
-	content: "";
-	position: absolute;
-	top: 12px;
-	right: 3px;
-	width: 18px;
-	height: 1px;
-	background-color: #fff;
-}
-
-.banner .btnClose:before {
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.banner .btnClose:after {
-	-webkit-transform: rotate(135deg);
-	-ms-transform: rotate(135deg);
-	transform: rotate(135deg);
-}
-
-/* ie8 */
-.ie8 {
-	background: url('//img.echosting.jobhub.com/ec/login_global/bg_ie8.jpg')
-		no-repeat center 0;
-}
-
-.ie8 #wrap {
-	display: none;
-}
-
-.ie8 .unsupported .footer {
-	display: none;
 }
 
 /* skipNavigation */
@@ -881,54 +511,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup,
 	font-size: 13px;
 }
 
-/* ico */
-.icoSns {
-	display: inline-block;
-	margin: -4px 5px 0 0;
-	overflow: hidden;
-	width: 16px;
-	height: 16px;
-	font-size: 0;
-	line-height: 0;
-	vertical-align: middle;
-}
-
-.icoFacebook {
-	background-image:
-		url('images/login/ico_logo_facebook.png');
-}
-
-.icoGoogle {
-	background-image:
-		url('images/login/ico_logo_google.png');
-}
-
-.icoLine {
-	background-image:
-		url('images/login/ico_logo_line.png');
-}
-
-.icoStatus {
-	display: inline-block;
-	padding: 2px 8px;
-	box-sizing: border-box;
-	border-radius: 50px;
-	font-size: 10px;
-	line-height: 14px;
-	vertical-align: text-top;
-	font-style: normal;
-	font-weight: 700;
-	color: #fff;
-}
-
-.icoStatus.recent {
-	background-color: #2dc26b;
-}
-
-.icoStatus.disabled {
-	background-color: #aeb4c6;
-}
-
 /* text */
 .txtWarn {
 	color: #dc2c2c;
@@ -1034,11 +616,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup,
 
 .fText.suffix {
 	padding-right: 105px;
-}
-
-html:lang(en) .fText.suffix, html:lang(ja) .fText.suffix, html:lang(vi) .fText.suffix
-	{
-	padding-right: 135px;
 }
 
 .fText.typePassword {
@@ -1280,12 +857,12 @@ html:lang(en) .fText.suffix, html:lang(ja) .fText.suffix, html:lang(vi) .fText.s
 	left: 0;
 	right: 0;
 	height: 2px;
-	background: #235BF5;
+	background: #2dc26b;
 }
 
 .mTab.themeSolid li.selected a {
 	border-bottom: 0;
-	color: #235BF5;
+	color: #2dc26b;
 	background: #fff;
 }
 
@@ -1525,34 +1102,6 @@ ul.txtInfo li li:before, ol.txtInfo li li:before {
 	text-align: center;
 }
 
-/* mSnsButton */
-.mSnsButton {
-	margin: 16px 0;
-}
-
-.mSnsButton .btnNormal {
-	display: inline-block;
-	padding: 16px;
-	width: 100%;
-	color: #444b59;
-	font-family: Arial;
-	font-weight: bold;
-	line-height: 24px;
-	text-align: center;
-}
-
-.mSnsButton .btnNormal:hover {
-	background-color: #f4f9ff;
-}
-
-.mSnsButton .or {
-	margin: 16px 0;
-	font-size: 14px;
-	line-height: 18px;
-	text-align: center;
-	color: #444b59;
-}
-
 /* mUtility */
 .mUtility {
 	margin: 24px 0 0 0;
@@ -1570,122 +1119,6 @@ ul.txtInfo li li:before, ol.txtInfo li li:before {
 /* gLeft*/
 .mUtility .gLeft {
 	float: left;
-}
-
-/* mSnsJoin */
-.mSnsJoin {
-	margin: 32px 0 0;
-}
-
-.mSnsJoin .title {
-	position: relative;
-	text-align: center;
-}
-
-.mSnsJoin .title::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 100%;
-	height: 1px;
-	background-color: #d6dae1;
-}
-
-.mSnsJoin .title .txt {
-	display: inline-block;
-	position: relative;
-	padding: 0 8px;
-	font-size: 14px;
-	line-height: 20px;
-	letter-spacing: -0.5px;
-	color: #444b59;
-	font-weight: 400;
-	background-color: #fff;
-}
-
-.mSnsJoin .cont {
-	margin: 32px 0 0;
-}
-
-.mSnsJoin .snsList {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 36px;
-}
-
-.mSnsJoin .snsList li a {
-	display: inline-block;
-	overflow: hidden;
-	width: 56px;
-	height: 56px;
-	box-sizing: border-box;
-	border-radius: 100%;
-	font-size: 1px;
-	color: transparent;
-	text-indent: 150%;
-	white-space: nowrap;
-	transition: .2s ease-out;
-}
-
-.mSnsJoin .snsList li a.google {
-	border: 1px solid #d6dae1;
-	background: #fff
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_sns_google.svg')
-		center center no-repeat;
-}
-
-.mSnsJoin .snsList li a.google:hover {
-	background-color: #f4f5f8;
-}
-
-.mSnsJoin .snsList li a.naver {
-	background: #03c75a
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_sns_naver.svg')
-		center center no-repeat;
-}
-
-.mSnsJoin .snsList li a.naver:hover {
-	background-color: #02a64b;
-}
-
-.mSnsJoin .snsList li a.kakao {
-	background: #fee500
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_sns_kakao.svg')
-		center center no-repeat;
-}
-
-.mSnsJoin .snsList li a.kakao:hover {
-	background-color: #d7c200;
-}
-
-/* mRecaptcha */
-.mRecaptcha {
-	position: relative;
-	margin: 24px 0 0;
-	height: 109px;
-}
-
-.mRecaptcha>.gRecaptcha {
-	position: absolute;
-	top: 0;
-	width: 304px;
-	margin: 0;
-	transform: scale(0.9);
-	transform-origin: 0 0;
-}
-
-/* mAd */
-.mAd {
-	display: none;
-	overflow: hidden;
-	margin: 32px 0 -16px 0;
-}
-
-.mAd img {
-	margin: 0 0 16px 0;
-	max-width: 100%;
 }
 
 /* mLayer */
@@ -1964,65 +1397,6 @@ ul.txtInfo li li:before, ol.txtInfo li li:before {
 	transition: .3s ease-out;
 }
 
-/* mPersonal */
-.mPersonal {
-	position: relative;
-	padding: 16px 20px 16px 80px;
-	box-sizing: border-box;
-	letter-spacing: -0.5px;
-	background-color: #fafafd;
-}
-
-.mPersonal+.mPersonal {
-	margin: 16px 0 0;
-}
-
-.mPersonal.google::before, .mPersonal.naver::before, .mPersonal.kakao::before
-	{
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 16px;
-	margin: -24px 0 0;
-	width: 48px;
-	height: 48px;
-	border-radius: 100%;
-	box-sizing: border-box;
-}
-
-.mPersonal.google::before {
-	border: 1px solid #d6dae1;
-	background: #fff
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_sns_google.svg')
-		center center no-repeat;
-}
-
-.mPersonal.naver::before {
-	background: #03c75a
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_sns_naver.svg')
-		center center no-repeat;
-}
-
-.mPersonal.kakao::before {
-	background: #fee500
-		url('//img.echosting.jobhub.com/smartAdmin/img/login/ico_sns_kakao.svg')
-		center center no-repeat;
-}
-
-.mPersonal .id {
-	font-size: 13px;
-	line-height: 20px;
-	color: #1b1e26;
-}
-
-.mPersonal .mail {
-	display: block;
-	margin: 2px 0 0;
-	font-size: 12px;
-	line-height: 18px;
-}
-
-
 @media ( max-width : 320px) {
 	.mRecaptcha>.gRecaptcha {
 		transform: scale(0.765);
@@ -2068,17 +1442,7 @@ ul.txtInfo li li:before, ol.txtInfo li li:before {
 		width: 200px;
 	}
 
-	/* mSnsJoin */
-	.mSnsJoin .cont {
-		margin: 16px 0 0;
-	}
-	.mSnsJoin .snsList {
-		gap: 24px;
-	}
-	.mSnsJoin .snsList li a {
-		width: 48px;
-		height: 48px;
-	}
+	
 }
 
 @media ( min-width : 768px) {
@@ -2088,37 +1452,11 @@ ul.txtInfo li li:before, ol.txtInfo li li:before {
 	.RPI {
 		display: inline !important;
 	}
-	.mRecaptcha>.gRecaptcha {
-		transform: scale(1.3);
-	}
 }
 
 @media ( min-width : 1024px) {
 	.RPB {
 		display: block;
-	}
-	.language .wrap {
-		padding: 0 10px;
-		text-align: center;
-	}
-	.language .copy {
-		margin: 0;
-		padding: 18px 0 18px 25px;
-	}
-	.language .copy:before {
-		top: 20px;
-	}
-	.language .changer {
-		display: inline-block;
-		padding: 10px 0 10px 40px;
-	}
-	.language .changer .global {
-		margin: 0 10px 0 0;
-		width: 150px;
-	}
-	.language .btnClose {
-		top: 10px;
-		right: 22px;
 	}
 	#contents {
 		max-width: 396px;
@@ -2131,8 +1469,5 @@ ul.txtInfo li li:before, ol.txtInfo li li:before {
 	}
 	.mUtility .gLeft .RPB {
 		display: inline-block;
-	}
-	.mAd {
-		display: block;
 	}
 }

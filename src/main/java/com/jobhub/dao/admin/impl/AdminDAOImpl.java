@@ -100,6 +100,18 @@ public class AdminDAOImpl implements AdminDAO {
 		return employeeList;
 	}
 
+	@Override
+	public int saveJoinRequest(Employee employee) {
+		int result = sqlSessionTemplate.insert("admin_mapper.saveJoinRequest", employee);
+		return result;
+	}
+
+	@Override
+	public Admin findAdminByEmployee(Employee employee) {
+		Admin loginAdmin = sqlSessionTemplate.selectOne("admin_mapper.findAdminByEmployee", employee);
+		return loginAdmin;
+	}
+
 	
 	
 	

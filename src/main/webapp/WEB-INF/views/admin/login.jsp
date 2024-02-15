@@ -14,10 +14,8 @@
 <meta property="og:description" content="Jobhub 관리자 로그인 바로가기">
 <meta property="og:type" content="website">
 <title>관리자 로그인 - Jobhub</title>
-<link rel="stylesheet" type="text/css" href="css/admin/notosans.css"
-	media="all">
-<link rel="stylesheet" type="text/css" href="css/login_v1_1.css"
-	media="all">
+<link rel="shortcut icon" href="/common/icon/jobhub_favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/login_v1_1.css" media="all">
 </head>
 <body>
 	<!-- header -->

@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Jobhub 계정 생성 요청</title>
-<link rel="stylesheet" type="text/css" href="css/notosans.css" media="all">
+<link rel="shortcut icon" href="/common/icon/jobhub_favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="css/user_v1_1.css" media="all">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
@@ -153,7 +153,7 @@
 	<div id="wrap">
 		<!-- container -->
 		<div id="container">
-			<form name="frmRegister" id="frmRegister" action="" method="post"
+			<form name="frmRegister" id="frmRegister" action="/admin/joinApproval" method="post"
 				enctype="multipart/form-data">
 				<!-- contents -->
 				<div id="contents">
@@ -165,9 +165,6 @@
 							</a>
 						</h1>
 					</div>
-					<!-- <div id="divStep1"> -->
-					<div class="tabCont" style="display: block;">
-						<div style="display: block;">
 							<!-- //header -->
 							<div class="mFormBox" id="divKcpAuth">
 								<div class="column">
@@ -187,14 +184,14 @@
 										</div>
 									</div>
 									<div class="formBox gFlex">
-										<input type="text" name="kcpUserName" id="kcpUserName"
+										<input type="text" name="name" id="name"
 											class="fText gFull eFocus" placeholder="이름 입력"
 											aria-label="이름 입력" value="" tabindex="1">
 										<button type="button" class="btnReset">
 											<i class="icoReset">입력 초기화</i>
 										</button>
 									</div>
-									<p class="message typeLeft" id="pKcpUserNameErr"
+									<p class="message typeLeft" id="nameErr"
 										style="display: none;"></p>
 								</div>
 
@@ -202,28 +199,27 @@
 									<strong class="title">생년월일/성별</strong>
 									<div class="formBox gFlex myNum">
 										<span class="myNum-input-first gFlex"> <input
-											type="number" name="kcpBirthDay" id="kcpBirthDay"
+											type="number" name="birthDay" id="birthDay"
 											class="fText eFocus" maxlength="6" placeholder="생년월일 6자리"
 											aria-label="생년월일 6자리" value="" tabindex="2">
 										</span> <span class="myNum-input-last gFlex"> <input
-											type="number" name="kcpSexCode" id="kcpSexCode"
+											type="number" name="sexCode" id="sexCode"
 											class="fText eFocus" maxlength="1" aria-label="주민등록번호 7번째 자리"
 											value="" tabindex="3"> <!--error  class 사용 --> <span
 											class="myNum-mark-after"><i></i><i></i><i></i><i></i><i></i><i></i></span>
 										</span>
 									</div>
+									<p class="message typeLeft" id="errorMsg">${error}</p>
 
-									<p class="message typeLeft" id="pKcpBirthDayErr"
+									<p class="message typeLeft" id="birthDayErr"
 										style="display: none;"></p>
 
 								</div>
 							</div>
-						</div>
 
-					</div>
 					<div class="mButton">
-						<a href="#none" class="btnSubmit large gFull" id="btnSubmit"
-							tabindex="15">가입 요청하기</a>
+						<button type="submit" class="btnSubmit large gFull" id="btnSubmit"
+							tabindex="15">가입 요청하기</button>
 					</div>
 					<div class="mUtility left">
 						이미 계정이 있으신가요? 
@@ -244,6 +240,19 @@
 		</div>
 		<!-- //container -->
 </div>
+<script>
+    // success 메시지
+    var successMessage = "${success}";
+    if (successMessage) {
+        alert(successMessage);
+    }
+
+    // error 메시지
+    var errorMessage = "${error}";
+    if (errorMessage) {
+        alert(errorMessage);
+    }
+</script>
 </body>
 </html>
 

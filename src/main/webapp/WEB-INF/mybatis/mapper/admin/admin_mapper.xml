@@ -23,11 +23,42 @@
 		WHERE employee_id=#{employeeId}
 	</select>
 	
-	
 	<!-- 관리자 저장(생성) -->
 	<insert id="saveAdmin" parameterType="Admin">
 		insert into ADMINISTRATOR values ( #{adminId}, #{adminPw}, #{employeeId}, #{permissionCode}, NOW() ) 
 	</insert>
+	
+	<!-- 관리자 계정 생성 요청 저장 -->
+	<insert id="saveJoinRequest" parameterType="employee">
+		INSERT INTO administrator_request VALUES ( seq_administrator_request_id.NEXTVAL,
+		#{name}, TO_DATE(#{birthDay}, 'YYMMDD'),
+		<if test="sexCode == '1' or sexCode == '3'"> '남성' </if>
+		<if test="sexCode == '2' or sexCode == '4'"> '여성' </if>
+		<if test="sexCode != '1' and sexCode != '2' and sexCode != '3' and sexCode != '4'"> NULL </if>
+		,
+		SYSDATE )
+	</insert>
+	
+	<!-- 관리자 생성 요청으로 관리자 계정 조회 -->
+	<select id="findAdminByEmployee" parameterType="String"
+		resultType="Admin">
+	SELECT ad.*
+	FROM ADMINISTRATOR ad
+	JOIN EMPLOYEE e ON ad.employee_ID = e.employee_id
+	WHERE 1=1
+	<if test="name != null and name != ''">
+		AND name = #{name}
+	</if>
+	<if test="birthDay != null and birthDay != ''">
+		AND TO_CHAR(TO_DATE(e.birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
+	</if>
+	<if test="sexCode == '1' or sexCode == '3'">
+		AND e.gender = '남성'
+	</if>
+	<if test="sexCode == '2' or sexCode == '4'">
+		AND e.gender = '여성'
+	</if>
+	</select>
 	
 	
 	<select id="findAdminList" resultType="Admin">
@@ -125,7 +156,6 @@
 		WHERE name = #{name}
 	</select>
 	
-	
 	<select id="findEmployeeList" resultType="Employee">
 		SELECT * FROM EMPLOYEE
 	</select>
@@ -171,6 +201,17 @@
 		<if test="email != null and email != ''">
 			AND email LIKE '%' || #{searchKeyword} || '%'  
 		</if>
+		
+		<if test="birthDay != null and birthDay != ''">
+			AND WHERE TO_CHAR(TO_DATE(birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
+		</if>
+		 <if test="sexCode != null and sexCode != ''">
+	        AND gender = 
+	        <choose>
+	            <when test="sexCode == '1' or sexCode == '3'"> '남성' </when>
+	            <when test="sexCode == '2' or sexCode == '4'"> '여성' </when>
+	        </choose>
+	    </if>
 	</select>
 	
 	

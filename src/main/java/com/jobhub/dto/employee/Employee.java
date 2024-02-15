@@ -32,5 +32,7 @@ public class Employee {
 	String hireDate;
 	String email;
 	String jobsName;
+	String birthDay;
+	String sexCode;
 	
 }

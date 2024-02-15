@@ -206,7 +206,7 @@
 					<div class="btn_confirm">
 						<input type="submit" value="저장" class="btn_medium" accesskey="s">
 						<button type="button" class="btn_medium bx-white"
-							onclick="window.close();">닫기</button>
+							onclick="/admin/resume">목록</button>
 					</div>
 				</form>
 			</div>
