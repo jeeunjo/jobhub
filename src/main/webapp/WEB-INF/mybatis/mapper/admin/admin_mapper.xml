@@ -32,11 +32,9 @@
 	<insert id="saveJoinRequest" parameterType="employee">
 		INSERT INTO administrator_request VALUES ( seq_administrator_request_id.NEXTVAL,
 		#{name}, TO_DATE(#{birthDay}, 'YYMMDD'),
-		<if test="sexCode == '1' or sexCode == '3'"> '남성' </if>
-		<if test="sexCode == '2' or sexCode == '4'"> '여성' </if>
-		<if test="sexCode != '1' and sexCode != '2' and sexCode != '3' and sexCode != '4'"> NULL </if>
-		,
-		SYSDATE )
+		<if test='sexCode.equals("1") or sexCode == "3"'> '남성' </if>
+		<if test='sexCode == "2" or sexCode == "4"'> '여성' </if>
+		, SYSDATE )
 	</insert>
 	
 	<!-- 관리자 생성 요청으로 관리자 계정 조회 -->
@@ -52,10 +50,10 @@
 	<if test="birthDay != null and birthDay != ''">
 		AND TO_CHAR(TO_DATE(e.birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
 	</if>
-	<if test="sexCode == '1' or sexCode == '3'">
+	<if test='sexCode == "1" or sexCode == "3"'>
 		AND e.gender = '남성'
 	</if>
-	<if test="sexCode == '2' or sexCode == '4'">
+	<if test='sexCode == "2" or sexCode == "4"'>
 		AND e.gender = '여성'
 	</if>
 	</select>
@@ -216,10 +214,10 @@
 	<if test="birthDay != null and birthDay != ''">
 		AND TO_CHAR(TO_DATE(birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
 	</if>
-	<if test="sexCode == '1' or sexCode == '3'">
+	<if test='sexCode == "1" or sexCode == "3"'>
 		AND gender = '남성'
 	</if>
-	<if test="sexCode == '2' or sexCode == '4'">
+	<if test='sexCode == "2" or sexCode == "4"'>
 		AND gender = '여성'
 	</if>
 	</select>
