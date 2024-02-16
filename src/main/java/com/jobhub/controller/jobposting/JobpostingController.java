@@ -29,6 +29,7 @@ import com.jobhub.service.jobposting.JobpostingService;
 
 
 @Controller
+@RequestMapping("/admin")
 public class JobpostingController {
 
 	@Autowired
@@ -81,7 +82,7 @@ public class JobpostingController {
 	}
 	
 	
-	@RequestMapping("jobpostingMain")
+	@RequestMapping("/jobpostingMain")
 	public String jobpostingMain(Model model, String keyword ) {
 		
 //		List<Jobposting> jobpostingList = jobpostingService.findJobpostingList();
@@ -138,14 +139,14 @@ public class JobpostingController {
 
 	//FAQs
 	
-	@GetMapping("addFaqs")
+	@GetMapping("/addFaqs")
 	public String addFAQs() {
 		
 		return "FAQs/addFaqs";
 	}
 	
 	
-	@PostMapping("addFaqs")
+	@PostMapping("/addFaqs")
 	public String addFAQsProcess(@ModelAttribute FAQs faqs) {
 		
 		int result = jobpostingService.saveFaqs(faqs);
@@ -161,7 +162,7 @@ public class JobpostingController {
 	}
 	
 	
-	@RequestMapping("faqs")
+	@RequestMapping("/faqs")
 	public String faqsMain(Model model) {
 		List<FAQs> faqsList = jobpostingService.findFaqsList();
 		model.addAttribute("faqsList" , faqsList);

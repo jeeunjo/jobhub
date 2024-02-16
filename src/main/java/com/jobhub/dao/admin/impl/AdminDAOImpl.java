@@ -112,7 +112,11 @@ public class AdminDAOImpl implements AdminDAO {
 		return loginAdmin;
 	}
 
-	
+	@Override
+	public List<Employee> findEmployeeListByRequest(Employee employee) {
+		List<Employee> employeeList = sqlSessionTemplate.selectList("admin_mapper.findEmployeeListByRequest", employee);
+		return employeeList;
+	}
 	
 	
 	

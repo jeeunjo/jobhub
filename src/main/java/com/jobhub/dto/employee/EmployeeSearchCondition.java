@@ -1,5 +1,8 @@
 package com.jobhub.dto.employee;
 
+import lombok.Data;
+
+@Data
 public class EmployeeSearchCondition {
 	
 	String employeeId;
@@ -9,7 +12,7 @@ public class EmployeeSearchCondition {
 	String phone;			
 	String tel;
 	String birth;
-	char gender;
+	String gender;
 	String address;
 	String hireDate;
 	String email;
@@ -17,5 +20,6 @@ public class EmployeeSearchCondition {
 	//관리자 가입요청
 	String birthDay;
     String sexCode;
+    String searchKeyword;
 
 }

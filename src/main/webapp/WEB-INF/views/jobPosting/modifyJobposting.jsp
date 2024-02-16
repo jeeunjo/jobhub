@@ -1,39 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-<title>Jobhub 신규공고</title>
-<link rel="stylesheet" href="css/admin/admin.css">
-<link rel="shortcut icon" href="common/icon/jobhub_favicon.ico"
-	type="image/x-icon">
-<script src="common/js/jquery-1.8.3.min.js"></script>
-<script src="common/js/jquery-ui-1.10.3.custom.js"></script>
-<script src="common/js/common.js"></script>
-<script src="common/js/categorylist.js"></script>
-<script src="https://kit.fontawesome.com/b158a20f5c.js"
-	crossorigin="anonymous"></script>
-	
-</head>
-<body>
-
- <header id="hd">
-        <div id="hd_wrap">
-            <h1>Jobhub 관리자 페이지</h1>
-            <div id="logo"><a href="/admin/adminMain"><img src="/img/admin/logo_wh_250x35.png"
-                        alt="Jobhub logo"></a></div>
-            <div id="tnb">
-                <ul>
-                    <li>${loginId}님</li>
-                    <li><a href="#" target="_blank">Jobhub바로가기</a></li>
-                    <li><a href="/admin/mypage">마이페이지</a></li>
-                    <li id="tnb_logout"><a href="#">로그아웃</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="/WEB-INF/views/admin/layout/header.jsp" %>
      <div id="snb">
         <dl>
             <dt class="g10"><i class="fa-solid fa-people-group"></i>회원관리</dt>
@@ -283,8 +250,4 @@
             </div>
         </div>
     </div>
-	
-	
-	
-</body>
-</html>
+<%@include file="/WEB-INF/views/admin/layout/footer.jsp" %>

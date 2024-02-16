@@ -42,12 +42,12 @@
 	<!-- 관리자 생성 요청으로 관리자 계정 조회 -->
 	<select id="findAdminByEmployee" parameterType="String"
 		resultType="Admin">
-	SELECT ad.*
+	SELECT *
 	FROM ADMINISTRATOR ad
 	JOIN EMPLOYEE e ON ad.employee_ID = e.employee_id
 	WHERE 1=1
 	<if test="name != null and name != ''">
-		AND name = #{name}
+		AND e.name = #{name}
 	</if>
 	<if test="birthDay != null and birthDay != ''">
 		AND TO_CHAR(TO_DATE(e.birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
@@ -201,18 +201,27 @@
 		<if test="email != null and email != ''">
 			AND email LIKE '%' || #{searchKeyword} || '%'  
 		</if>
-		
-		<if test="birthDay != null and birthDay != ''">
-			AND WHERE TO_CHAR(TO_DATE(birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
-		</if>
-		 <if test="sexCode != null and sexCode != ''">
-	        AND gender = 
-	        <choose>
-	            <when test="sexCode == '1' or sexCode == '3'"> '남성' </when>
-	            <when test="sexCode == '2' or sexCode == '4'"> '여성' </when>
-	        </choose>
-	    </if>
 	</select>
 	
+	
+	<!-- 관리자 생성 요청으로 직원 여부 확인 -->
+	<select id="findEmployeeListByRequest" parameterType="String"
+		resultType="Employee">
+	SELECT *
+	FROM EMPLOYEE 
+	WHERE 1=1
+	<if test="name != null and name != ''">
+		AND name = #{name}
+	</if>
+	<if test="birthDay != null and birthDay != ''">
+		AND TO_CHAR(TO_DATE(birth, 'YYYY-MM-DD'), 'YYMMDD') = #{birthDay}
+	</if>
+	<if test="sexCode == '1' or sexCode == '3'">
+		AND gender = '남성'
+	</if>
+	<if test="sexCode == '2' or sexCode == '4'">
+		AND gender = '여성'
+	</if>
+	</select>
 	
 </mapper>	

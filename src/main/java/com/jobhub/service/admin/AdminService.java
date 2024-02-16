@@ -39,7 +39,7 @@ public interface AdminService {
 	
 	public int saveAdminProfile(AdminProfile adminProfile);
 	
-	public boolean isMatchingEmployeeInfo(EmployeeSearchCondition employeeSearchCondition);
+	public boolean isMatchingEmployeeInfo(Employee employee);
 	
 	public int saveJoinRequest(Employee employee);
 	

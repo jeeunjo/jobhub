@@ -27,7 +27,7 @@ public class Employee {
 	String phone;			
 	String tel;
 	String birth;
-	char gender;
+	String gender;
 	String address;
 	String hireDate;
 	String email;

@@ -246,12 +246,6 @@
     if (successMessage) {
         alert(successMessage);
     }
-
-    // error 메시지
-    var errorMessage = "${error}";
-    if (errorMessage) {
-        alert(errorMessage);
-    }
 </script>
 </body>
 </html>

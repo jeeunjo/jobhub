@@ -37,5 +37,7 @@ public interface AdminDAO {
 	
 	public List<Employee> findEmployeeListBySearchCondition(EmployeeSearchCondition employeeSearchCondition);
 	
+	public List<Employee> findEmployeeListByRequest(Employee employee);
+	
 	public int saveJoinRequest(Employee employee);
 }
