@@ -40,4 +40,7 @@ public interface AdminDAO {
 	public List<Employee> findEmployeeListByRequest(Employee employee);
 	
 	public int saveJoinRequest(Employee employee);
+	
+	public List<Admin> findAlreadyRequest(Employee employee);
+	
 }

@@ -144,5 +144,15 @@ public class AdminServiceImpl implements AdminService {
 			return true; // return 1;
 		}
 	}
+	@Override
+	public boolean isAlreadyRequest(Employee employee) {
+		
+		List<Admin> adminList = adminDAO.findAlreadyRequest(employee);
+		if (adminList == null) {
+			return false; // return 0;
+		} else {
+			return true; // return 1;
+		}
+	}
 
 }

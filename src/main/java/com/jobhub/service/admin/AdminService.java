@@ -44,5 +44,8 @@ public interface AdminService {
 	public int saveJoinRequest(Employee employee);
 	
 	public boolean isExistingAdmin(Employee employee);
+	
+	public boolean isAlreadyRequest(Employee employee);
+	
 }
 
