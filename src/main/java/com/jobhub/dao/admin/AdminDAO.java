@@ -41,6 +41,6 @@ public interface AdminDAO {
 	
 	public int saveJoinRequest(Employee employee);
 	
-	public List<Admin> findAlreadyRequest(Employee employee);
+	public List<Employee> findAlreadyRequest(Employee employee);
 	
 }

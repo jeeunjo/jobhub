@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -186,11 +187,17 @@
 									<div class="formBox gFlex">
 										<input type="text" name="name" id="name"
 											class="fText gFull eFocus" placeholder="이름 입력"
-											aria-label="이름 입력" value="" tabindex="1">
+											aria-label="이름 입력" value="${employee.name}" tabindex="1">
 										<button type="button" class="btnReset">
 											<i class="icoReset">입력 초기화</i>
 										</button>
 									</div>
+									<spring:hasBindErrors name="employee">
+									<c:if test="${errors.hasFieldErrors('name')}">
+										이름은 필수 입력 항목입니다.<br>
+										${errors.getFieldErrors('name').defaultMessage}<br>
+									</c:if>
+									</spring:hasBindErrors> 
 									<p class="message typeLeft" id="nameErr"
 										style="display: none;"></p>
 								</div>
@@ -201,7 +208,7 @@
 										<span class="myNum-input-first gFlex"> <input
 											type="number" name="birthDay" id="birthDay"
 											class="fText eFocus" maxlength="6" placeholder="생년월일 6자리"
-											aria-label="생년월일 6자리" value="" tabindex="2">
+											aria-label="생년월일 6자리" value="${employee.birthDay}" tabindex="2">
 										</span> <span class="myNum-input-last gFlex"> <input
 											type="number" name="sexCode" id="sexCode"
 											class="fText eFocus" maxlength="1" aria-label="주민등록번호 7번째 자리"
@@ -210,7 +217,6 @@
 										</span>
 									</div>
 									<p class="message typeLeft" id="errorMsg">${error}</p>
-
 									<p class="message typeLeft" id="birthDayErr"
 										style="display: none;"></p>
 

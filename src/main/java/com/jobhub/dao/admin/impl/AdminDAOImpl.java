@@ -119,8 +119,8 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public List<Admin> findAlreadyRequest(Employee employee) {
-		List<Admin> adminRequestList = sqlSessionTemplate.selectList("admin_mapper.findAlreadyRequest", employee);
+	public List<Employee> findAlreadyRequest(Employee employee) {
+		List<Employee> adminRequestList = sqlSessionTemplate.selectList("admin_mapper.findAlreadyRequest", employee);
 		return adminRequestList;
 	}
 	
