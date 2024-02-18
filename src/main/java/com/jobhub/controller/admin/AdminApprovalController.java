@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.jobhub.dto.employee.Employee;
+import com.jobhub.dto.admin.AdminRequest;
 import com.jobhub.service.admin.AdminService;
 import com.jobhub.validator.AdminValidator;
 
@@ -35,7 +35,7 @@ public class AdminApprovalController {
 	}
 	
 	@PostMapping("/joinApproval")
-    public String processJoinApproval(@Valid @ModelAttribute Employee employee, Model model, BindingResult br) {
+    public String processJoinApproval(@Valid @ModelAttribute AdminRequest adminRequest, Model model, BindingResult br) {
 		
 		//서버에서 검증
 		//유효한가
@@ -44,10 +44,6 @@ public class AdminApprovalController {
 		if(br.hasErrors()) {//br 안에 에러 항목이 있는지
 			List<ObjectError> errorList = br.getAllErrors();
 			for(ObjectError er : errorList) {
-//				System.out.println(er.getObjectName());
-//				System.out.println(er.getDefaultMessage());
-//				System.out.println(er.getCode());
-//				System.out.println(er.getCodes()[0]);
 				 model.addAttribute("error", er.getDefaultMessage());
 			}
 			
@@ -58,15 +54,15 @@ public class AdminApprovalController {
 		
 		
         // 1) 이미 가입된 관리자인지 확인
-        if (adminService.isExistingAdmin(employee)) {
+        if (adminService.isExistingAdmin(adminRequest)) {
             model.addAttribute("error", "이미 생성된 계정이 있습니다.");
         } else {
             // 2) 가입된 관리자가 아니라면 직원 정보와 입력한 정보 확인
-            if (adminService.isMatchingEmployeeInfo(employee)) {
-                if (adminService.isAlreadyRequest(employee)) {
+            if (adminService.isMatchingEmployeeInfo(adminRequest)) {
+                if (adminService.isAlreadyRequest(adminRequest)) {
                     model.addAttribute("error", "이미 요청 완료되었습니다.");
                 } else {
-                    adminService.saveJoinRequest(employee);
+                    adminService.saveJoinRequest(adminRequest);
                     model.addAttribute("success", "가입 요청 완료되었습니다. 계정 생성 후 사내 메일로 안내될 예정입니다.");
                 }
             } else {

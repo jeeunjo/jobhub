@@ -62,7 +62,7 @@ public class JobpostingController {
 
 		if(result > 0 && result2 > 0) { 
 			System.out.println("성공");
-			return "redirect:/jobpostingMain"; 
+			return "redirect:/admin/jobpostingMain"; 
 
 		} else { 
 			System.out.println("실패");
@@ -125,7 +125,7 @@ public class JobpostingController {
 
 		if(result > 0 && result2 > 0) { 
 			System.out.println("성공");
-			return "redirect:jobpostingMain";  
+			return "redirect:/admin/jobpostingMain";  
 
 		} else { 
 			System.out.println("실패");
@@ -153,7 +153,7 @@ public class JobpostingController {
 		
 		if(result > 0) { 
 			System.out.println("성공");
-			return "redirect:faqs";  
+			return "redirect:/admin/faqs";  
 
 		} else { 
 			System.out.println("실패");
@@ -187,7 +187,7 @@ public class JobpostingController {
 	
 		if(result > 0 ) { 
 			System.out.println("성공");
-			return "redirect:faqs";  
+			return "redirect:/admin/faqs";  
 
 		} else {
 			System.out.println("실패");
@@ -203,7 +203,7 @@ public class JobpostingController {
 		
 		if(result > 0 ) {
 			System.out.println("성공");
-			return "redirect:faqs";
+			return "redirect:/admin/faqs";
 		} else {
 			System.out.println("실패");
 			return "FAQs/faqsMain";	

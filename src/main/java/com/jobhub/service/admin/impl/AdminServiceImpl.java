@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.jobhub.dao.admin.AdminDAO;
 import com.jobhub.dto.admin.Admin;
 import com.jobhub.dto.admin.AdminProfile;
+import com.jobhub.dto.admin.AdminRequest;
 import com.jobhub.dto.admin.AdminSearchCondition;
 import com.jobhub.dto.employee.Employee;
 import com.jobhub.dto.employee.EmployeeProfile;
@@ -118,10 +119,10 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public boolean isMatchingEmployeeInfo(Employee employee) {
+	public boolean isMatchingEmployeeInfo(AdminRequest adminRequest) {
 		// Controller 가 넘겨준 name, birhDay, sexCode하고 
 		// DB 에 일치하는 name, birth, gender 있는지 확인
-		List<Employee> employeeList = adminDAO.findEmployeeListByRequest(employee);
+		List<Employee> employeeList = adminDAO.findEmployeeListByRequest(adminRequest);
 		if (!employeeList.isEmpty()) {
 			return true; // return 1;
 		} else {
@@ -130,14 +131,14 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public int saveJoinRequest(Employee employee) {
-		int result = adminDAO.saveJoinRequest(employee);
+	public int saveJoinRequest(AdminRequest adminRequest) {
+		int result = adminDAO.saveJoinRequest(adminRequest);
 		return result;
 	}
 
 	@Override
-	public boolean isExistingAdmin(Employee employee) {
-		Admin admin = adminDAO.findAdminByEmployee(employee);
+	public boolean isExistingAdmin(AdminRequest adminRequest) {
+		Admin admin = adminDAO.findAdminByEmployee(adminRequest);
 		if (admin == null) {
 			return false; // return 0;
 		} else {
@@ -145,9 +146,9 @@ public class AdminServiceImpl implements AdminService {
 		}
 	}
 	@Override
-	public boolean isAlreadyRequest(Employee employee) {
+	public boolean isAlreadyRequest(AdminRequest adminRequest) {
 		
-		List<Employee> adminList = adminDAO.findAlreadyRequest(employee);
+		List<AdminRequest> adminList = adminDAO.findAlreadyRequest(adminRequest);
 		if (adminList == null) {
 			return false; // return 0;
 		} else {

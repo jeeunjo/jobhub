@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.jobhub.dao.admin.AdminDAO;
 import com.jobhub.dto.admin.Admin;
 import com.jobhub.dto.admin.AdminProfile;
+import com.jobhub.dto.admin.AdminRequest;
 import com.jobhub.dto.admin.AdminSearchCondition;
 import com.jobhub.dto.employee.Employee;
 import com.jobhub.dto.employee.EmployeeProfile;
@@ -101,26 +102,26 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public int saveJoinRequest(Employee employee) {
-		int result = sqlSessionTemplate.insert("admin_mapper.saveJoinRequest", employee);
+	public int saveJoinRequest(AdminRequest adminRequest) {
+		int result = sqlSessionTemplate.insert("admin_mapper.saveJoinRequest", adminRequest);
 		return result;
 	}
 
 	@Override
-	public Admin findAdminByEmployee(Employee employee) {
-		Admin loginAdmin = sqlSessionTemplate.selectOne("admin_mapper.findAdminByEmployee", employee);
+	public Admin findAdminByEmployee(AdminRequest adminRequest) {
+		Admin loginAdmin = sqlSessionTemplate.selectOne("admin_mapper.findAdminByEmployee", adminRequest);
 		return loginAdmin;
 	}
 
 	@Override
-	public List<Employee> findEmployeeListByRequest(Employee employee) {
-		List<Employee> employeeList = sqlSessionTemplate.selectList("admin_mapper.findEmployeeListByRequest", employee);
+	public List<Employee> findEmployeeListByRequest(AdminRequest adminRequest) {
+		List<Employee> employeeList = sqlSessionTemplate.selectList("admin_mapper.findEmployeeListByRequest", adminRequest);
 		return employeeList;
 	}
 
 	@Override
-	public List<Employee> findAlreadyRequest(Employee employee) {
-		List<Employee> adminRequestList = sqlSessionTemplate.selectList("admin_mapper.findAlreadyRequest", employee);
+	public List<AdminRequest> findAlreadyRequest(AdminRequest adminRequest) {
+		List<AdminRequest> adminRequestList = sqlSessionTemplate.selectList("admin_mapper.findAlreadyRequest", adminRequest);
 		return adminRequestList;
 	}
 	

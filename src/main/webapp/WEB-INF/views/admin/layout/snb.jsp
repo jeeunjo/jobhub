@@ -5,8 +5,8 @@
 			<dt class="g10">
 				<i class="fa-solid fa-people-group"></i>회원관리
 			</dt>
-			<dd class="g10">
-				<a href="">회원정보 조회<em>2</em></a>
+			<dd class="g10 ${currentPage eq 'member' ? 'active' : ''}">
+				<a href="/admin/customers">회원정보 조회<em>2</em></a>
 			</dd>
 			<dd class="g10">
 				<a href="">신규회원 등록</a>
@@ -17,7 +17,7 @@
 			<dt class="g10">
 				<i class="fa-solid fa-people-roof"></i>직원관리
 			</dt>
-			<dd class="g10">
+			<dd class="g10 ${currentPage eq 'employee' ? 'active' : ''}">
 				<a href="">직원정보 조회<em>2</em></a>
 			</dd>
 			<dd class="g10">
@@ -26,7 +26,7 @@
 			<dt class="g10">
 				<i class="fa-solid fa-file-lines"></i>이력서관리
 			</dt>
-			<dd class="g10">
+			<dd class="g10 ${currentPage eq 'resume' ? 'active' : ''}">
 				<a href="/admin/resume">이력서 조회</a>
 			</dd>
 			<dd class="g10">
@@ -35,13 +35,16 @@
 			<dt class="g10">
 				<i class="fa-solid fa-pen-to-square"></i>채용공고 관리
 			</dt>
-			<dd class="g10">
-				<a href="">신규공고 등록</a>
+			<dd class="g10 ${currentPage eq 'jobpostingMain' ? 'active' : ''}">
+				<a href="/admin/jobpostingMain">채용공고 조회</a>
+			</dd>
+			<dd class="g10 ${currentPage eq 'jobposting' ? 'active' : ''}">
+				<a href="/admin/jobposting">신규공고 등록</a>
 			</dd>
 			<dt class="g10">
 				<i class="fa-solid fa-gears"></i>관리자설정
 			</dt>
-			<dd class="g10">
+			<dd class="g10 ${currentPage eq 'setting' ? 'active' : ''}">
 				<a href="/admin/setting">관리자 조회<em>195</em></a>
 			</dd>
 			<dd class="g10">
@@ -50,5 +53,12 @@
 			<dd class="g10">
 				<a href="">계정승인요청 조회</a>
 			</dd>
+			<dt class="g10">
+				<i class="fa-regular fa-circle-question"></i>FAQs 관리
+			</dt>
+			 <dd class="g10 ${currentPage eq 'faq' ? 'active' : ''}">
+				 <a href="/admin/faqs">FAQs 조회</a>
+			 </dd>
+			
 		</dl>
 	</div>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.jobhub.dto.admin.Admin;
 import com.jobhub.dto.admin.AdminProfile;
+import com.jobhub.dto.admin.AdminRequest;
 import com.jobhub.dto.admin.AdminSearchCondition;
 import com.jobhub.dto.employee.Employee;
 import com.jobhub.dto.employee.EmployeeProfile;
@@ -13,7 +14,7 @@ public interface AdminDAO {
 	
 	public Admin findLoginAdmin(Admin admin);
 	
-	public Admin findAdminByEmployee(Employee employee);
+	public Admin findAdminByEmployee(AdminRequest adminRequest);
 	
 	public int saveAdmin(Admin admin);
 	
@@ -37,10 +38,10 @@ public interface AdminDAO {
 	
 	public List<Employee> findEmployeeListBySearchCondition(EmployeeSearchCondition employeeSearchCondition);
 	
-	public List<Employee> findEmployeeListByRequest(Employee employee);
+	public List<Employee> findEmployeeListByRequest(AdminRequest adminRequest);
 	
-	public int saveJoinRequest(Employee employee);
+	public int saveJoinRequest(AdminRequest adminRequest);
 	
-	public List<Employee> findAlreadyRequest(Employee employee);
+	public List<AdminRequest> findAlreadyRequest(AdminRequest adminRequest);
 	
 }

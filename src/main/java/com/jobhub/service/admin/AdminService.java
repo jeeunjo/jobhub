@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.jobhub.dto.admin.Admin;
 import com.jobhub.dto.admin.AdminProfile;
+import com.jobhub.dto.admin.AdminRequest;
 import com.jobhub.dto.admin.AdminSearchCondition;
 import com.jobhub.dto.employee.Employee;
 import com.jobhub.dto.employee.EmployeeProfile;
@@ -39,13 +40,13 @@ public interface AdminService {
 	
 	public int saveAdminProfile(AdminProfile adminProfile);
 	
-	public boolean isMatchingEmployeeInfo(Employee employee);
+	public boolean isMatchingEmployeeInfo(AdminRequest adminRequest);
 	
-	public int saveJoinRequest(Employee employee);
+	public int saveJoinRequest(AdminRequest adminRequest);
 	
-	public boolean isExistingAdmin(Employee employee);
+	public boolean isExistingAdmin(AdminRequest adminRequest);
 	
-	public boolean isAlreadyRequest(Employee employee);
+	public boolean isAlreadyRequest(AdminRequest adminRequest);
 	
 }
 
