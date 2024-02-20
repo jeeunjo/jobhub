@@ -14,7 +14,7 @@ request.setAttribute("currentPage", currentPage);
 
                 <!-- 등록 -->
                 <h2>*표시는 필수 입력 항목입니다.</h2>
-                <form method="post" action="/modifyJobposting">
+                <form method="post" action="/admin/modifyJobposting">
                 <input type="hidden" name="postingId" value="${jobposting.postingId}">
                     <!-- <input type="hidden" name="code" value="list"> -->
                     <div class="tbl_frm01">

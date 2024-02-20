@@ -51,7 +51,7 @@ request.setAttribute("currentPage", currentPage);
 								<tr class="list0">
 									<td>${faqsItem.FAQsId}</td>
 									<td>${faqsItem.category}</td>
-									<td><a href="../modifyFaqs?FAQsId=${faqsItem.FAQsId}">${faqsItem.title}
+									<td><a href="/admin/modifyFaqs?FAQsId=${faqsItem.FAQsId}">${faqsItem.title}
 									</a></td>
 
 									<td><a href="/admin/removeFaqs?FAQsId=${faqsItem.FAQsId}"

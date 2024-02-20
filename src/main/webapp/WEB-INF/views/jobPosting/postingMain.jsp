@@ -77,7 +77,7 @@ request.setAttribute("currentPage", currentPage);
  <div class="local_ov mart30">
     총 공고 수 : <b class="fc_red">${postingCount}</b>개
 
-    <a href="../jobposting" class="fr btn_lsmall green">신규공고 등록</a>
+    <a href="/admin/jobposting" class="fr btn_lsmall green">신규공고 등록</a>
     
 </div>
 <div class="tbl_head01">
@@ -108,7 +108,7 @@ request.setAttribute("currentPage", currentPage);
 
 					<tr class="list0">
 						<td>${jobpostingItem.postingId}</td>
-						<td><a href="../modifyJobposting?postingId=${jobpostingItem.postingId}">${jobpostingItem.title}</a></td>
+						<td><a href="/admin/modifyJobposting?postingId=${jobpostingItem.postingId}">${jobpostingItem.title}</a></td>
 						<td>${jobpostingItem.employmentType}</td>
 						<td>${jobpostingItem.postWrittenDate}</td>
 						<td>${jobpostingItem.postStatus}</td>
