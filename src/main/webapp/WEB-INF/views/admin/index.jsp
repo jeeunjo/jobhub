@@ -71,7 +71,7 @@
 
 				<section class="sidx_head01">
 					<h2>
-						노출중 채용공고<a href="#" class="btn_small">공고관리 바로가기</a>
+						노출중 채용공고<a href="/admin/jobpostingMain" class="btn_small">채용공고조회 바로가기</a>
 					</h2>
 					<table>
 						<thead>

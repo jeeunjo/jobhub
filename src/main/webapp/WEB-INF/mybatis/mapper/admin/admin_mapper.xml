@@ -224,7 +224,7 @@
 	
 	<!-- 관리자 생성 요청 여부 확인 -->
 	<select id="findAlreadyRequest" parameterType="String"
-		resultType="Employee">
+		resultType="AdminRequest">
 	SELECT *
 	FROM administrator_request
 	WHERE 1=1
